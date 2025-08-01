@@ -12,7 +12,7 @@ WITH src_hosts AS (
 SELECT
     host_id,
     NVL(
-        host_name,
+           host_name,
         'Anonymous'
     ) AS host_name,
     is_superhost,
