@@ -1,7 +1,7 @@
 dbtlearn:
   outputs:
     dev:
-      account: # Fill in the Snowflake Account Name here (someting like: yczmxn-dk96978)
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       database: AIRBNB
       password: dbtPassword123
       role: transform

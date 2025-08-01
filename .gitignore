@@ -16,3 +16,5 @@ dbt_env/
 
 #ignore csv files
 *.csv
+
+.env
