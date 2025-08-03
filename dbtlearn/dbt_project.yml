@@ -42,5 +42,5 @@ models:
     src:
       +materialized: ephemeral
 
-vars:
-  user_name: "YOUR_USERNAME"
+# vars:
+#   user_name: "YOUR_USERNAME"
