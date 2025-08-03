@@ -19,7 +19,8 @@ RUN pip install --upgrade pip setuptools wheel
 
 COPY . .
 
-RUN pip install -r requirements.txt
-RUN pip install -r requirements-dev.txt
+RUN pip install -r requirements-dev-2.txt
 
-CMD ["bash"]
+WORKDIR /app/dbtlearn
+
+CMD ["sh", "-c", "dbt deps && dbt test"]

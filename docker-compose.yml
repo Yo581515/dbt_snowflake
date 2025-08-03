@@ -6,10 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: dbt_dagster_container
-    volumes:
-      - .:/app
     env_file:
       - .env
-    working_dir: /app
     stdin_open: true
     tty: true
+    working_dir: /app/dbtlearn

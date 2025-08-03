@@ -1,7 +1,7 @@
 dbtlearn:
   outputs:
     dev:
-      account: {{ env_var('SNOWFLAKE_ACCOUNT') }}
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       database: AIRBNB
       password: dbtPassword123
       role: transform
