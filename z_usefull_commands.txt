@@ -1,0 +1,2 @@
+export DBT_PROFILES_DIR="$PWD"
+heroku logs --tail --app yosafe-dbt-snowflake-docs-app
