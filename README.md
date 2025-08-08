@@ -1,18 +1,18 @@
 # ❄️ dbt + Snowflake (Dockerized)
 
-This repository provides a **Dockerized environment** for running a `dbt` project using `Snowflake`. No local dbt installation required — just clone, configure, and run.
+A lightweight Dockerized setup for running a `dbt` project with a Snowflake backend — no local dbt installation needed.
 
 ---
 
 ## 🔧 Requirements
 
-- [Docker](https://www.docker.com/) (with `docker compose`)
-- Snowflake account
+- [Docker](https://www.docker.com/) with `docker compose`
+- A valid Snowflake account
 
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### 1. Clone the Repository
 
@@ -21,47 +21,43 @@ git clone https://github.com/Yo581515/dbt_snowflake.git
 cd dbt_snowflake
 ```
 
-### 2. Set Environment Variables
+### 2. Configure Environment Variables
 
-Create a `.env` file in the root directory with your Snowflake account:
+Create a `.env` file in the root directory with the following:
 
 ```env
 SNOWFLAKE_ACCOUNT=your_account_identifier
 DBT_PROFILES_DIR=/app
-DAGSTER_DBT_PARSE_PROJECT_ON_LOAD=1  # Optional, only if using Dagster
+DAGSTER_DBT_PARSE_PROJECT_ON_LOAD=1
 ```
-
-## 🧪 Load Sample Data into Snowflake
-
-Before running your dbt models, you'll need some data in your Snowflake database.
-
-Use the following tool to insert sample datasets into your Snowflake account:
-
-👉 [https://dbt-data-importer.streamlit.app/](https://dbt-data-importer.streamlit.app/)
-
-### Steps:
-
-1. Open the link above.
-2. Enter your Snowflake credentials.
-4. Click **Start Setup** .
-
-The tool will connect to your Snowflake account and populate the selected schema with test data — ready to use with your dbt models.
-
-
 
 ---
 
-## 🐳 Run Services with Docker
+## 🧪 Load Sample Data into Snowflake
 
-> ✅ Ensure **Docker Desktop is installed and running** before continuing.
+Before running dbt models, populate your Snowflake database with sample data:
 
-Use the provided helper script:
+### Steps
+
+1. Visit the importer tool: [https://dbt-data-importer.streamlit.app/](https://dbt-data-importer.streamlit.app/)
+2. Enter your Snowflake credentials.
+3. Click **Start Setup** to load the data.
+
+Your Snowflake instance will now include example data you can use with dbt.
+
+---
+
+## 🐳 Run the Project with Docker
+
+### Option 1: Use the helper script
+
+> ✅ Make sure Docker Desktop is **installed** and **running** before starting.
 
 ```bash
 ./build_run_docker_compose.sh
 ```
 
-Or run manually:
+### Option 2: Run manually
 
 ```bash
 docker compose up --build
@@ -71,9 +67,9 @@ docker compose up --build
 
 ## ✅ Available Services
 
-- **dbt-test**: Installs dependencies and runs `dbt deps`, `dbt debug`, and `dbt test`
-- **docs-serve**: Builds and serves dbt documentation at [http://localhost:8888](http://localhost:8888)
-- **dbt-dagster**: Starts Dagster UI at [http://localhost:3333](http://localhost:3333)
+- **dbt-test**: Runs `dbt deps`, `dbt debug`, and `dbt test`
+- **docs-serve**: Generates and serves dbt docs at [http://localhost:8888](http://localhost:8888)
+- **dbt-dagster**: Runs Dagster UI at [http://localhost:3333](http://localhost:3333)
 
 ---
 
@@ -92,11 +88,9 @@ docker compose up --build
 
 ---
 
-## 🔐 profiles.yml
+## 🔐 profiles.yml Configuration
 
-The container expects a `profiles.yml` under `/app/`. The included version uses environment variables only for the Snowflake account.
-
-Example:
+The container expects the `profiles.yml` file at `/app/profiles.yml`. Here's the included configuration:
 
 ```yaml
 dbtlearn:
@@ -114,36 +108,9 @@ dbtlearn:
   target: dev
 ```
 
-This is already included in the image; no further action is required unless customizing.
+> ✅ This file is already baked into the image. No changes needed unless customizing.
 
 ---
-
-<!-- ## 🛠 Workflow Tips
-
-- Modify `.sql` and `.yml` files in `dbtlearn/`
-- Rebuild containers if Dockerfile or dependencies change: `docker compose up --build`
-- To access a container manually:
-
-```bash
-docker exec -it dbt_test_container bash
-```
-
-Inside the container, run dbt commands:
-
-```bash
-dbt run
-dbt test
-dbt build
-``` -->
-
----
-<!-- 
-## 📬 Need Help?
-
-Open an issue in this repository for support or questions.
-
---- -->
-
 <!-- Greetings to the MOST COMPLETE, CONTINUOUSLY UPDATED independent dbt™ (Data Build Tool) software course in the world - as of 2025! This course is both the TOP RATED and the BESTSELLER dbt course on Udemy! 
 
 Course website: https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/?referralCode=659B6722C93EF4096D11
