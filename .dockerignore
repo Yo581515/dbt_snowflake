@@ -1,7 +1,3 @@
-dbtlearn/package-lock.yml
-dbtlearn/target/
-dbtlearn/dbt_packages/
-
 archive
 dbt_dagster_project/tmp*
 
@@ -13,9 +9,7 @@ venv/
 tmp*/
 
 dbt_env/
+dbt_env_310/
 
 #ignore csv files
 *.csv
-
-.env
-dbt_env_310
