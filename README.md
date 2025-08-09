@@ -39,11 +39,9 @@ Before running dbt models, populate your Snowflake database with sample data:
 
 ### Steps
 
-1. Visit the importer tool: [https://dbt-data-importer.streamlit.app/](https://dbt-data-importer.streamlit.app/)
-2. Enter your Snowflake credentials.
-3. Click **Start Setup** to load the data.
+To load sample data into your Snowflake database, follow the instructions in the course resources:
 
-Your Snowflake instance will now include example data you can use with dbt.
+[📄 Course Resources – Load Sample Data](https://github.com/Yo581515/dbt_snowflake/blob/main/_course_resources/course-resources.md)
 
 ---
 
@@ -73,7 +71,7 @@ docker compose up --build
 
 ---
 
-## 📁 Project Structure
+<!-- ## 📁 Project Structure
 
 ```
 .
@@ -110,7 +108,7 @@ dbtlearn:
 
 > ✅ This file is already baked into the image. No changes needed unless customizing.
 
----
+--- -->
 <!-- Greetings to the MOST COMPLETE, CONTINUOUSLY UPDATED independent dbt™ (Data Build Tool) software course in the world - as of 2025! This course is both the TOP RATED and the BESTSELLER dbt course on Udemy! 
 
 Course website: https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/?referralCode=659B6722C93EF4096D11
