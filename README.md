@@ -37,8 +37,6 @@ DAGSTER_DBT_PARSE_PROJECT_ON_LOAD=1
 
 Before running dbt models, populate your Snowflake database with sample data:
 
-### Steps
-
 To load sample data into your Snowflake database, follow the instructions in the course resources:
 
 [📄 Course Resources – Load Sample Data](https://github.com/Yo581515/dbt_snowflake/blob/main/_course_resources/course-resources.md)
